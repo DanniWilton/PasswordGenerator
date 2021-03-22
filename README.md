@@ -1,0 +1,2 @@
+This passwword generator is a work in progress and will need to be submitted.
+I could not get the javascript to work as the prompt function stumped me. I did lots of research and asked lots of questions but could not figure out how to get the information from the prompts to create a password.
