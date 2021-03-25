@@ -1,15 +1,20 @@
-// 
+// When Generate Password button is clicked, prompt function appear
+// prompt box appears 'Select how many characters from 8-128?' 
+// confirm box asks 'include lowercase characters?'
+// confirm box asks 'include uppercase characters?'
+// confirm box asks 'include numeric characters?'
+// confirm box asks 'include symbols?'
 
-const lowerCaseCharacters = ["a","b","c","d","e"] 
-const upperCaseCharacters = ["A","B","C","D","E"]
-const numericCharacters = ["0"]
-const symbolCharacters = ["!"];
+const lowerCaseCharacters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] 
+const upperCaseCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+const numericCharacters = ["0","1","2","3","4","5","6","7","8","9"]
+const symbolCharacters = ["!","@","#","$","%","^","&","*","(",")","-","_","=","+","/","?",".",">",",","<","'",";",":","|"];
 
 var generateBtn = document.querySelector("#generate");
 
 // Prompt user for password options function
 function getPasswordOptions () {
-  let length = prompt('How many characters would you like your password to contain?')
+  let length = prompt("Select how many characters from 8-128")
 
   let hasLowerCase = confirm("Would you like lowercase characters?")
 
@@ -21,7 +26,7 @@ function getPasswordOptions () {
 
   let passwordOptions = {}
 
-  passwordOptions.pwdLen = length
+  passwordOptions.passwordLength = length
   passwordOptions.hasLowerCase = hasLowerCase
   passwordOptions.hasUpperCase = hasUpperCase
   passwordOptions.hasNumericCharacters = hasNumericCharacters
@@ -30,18 +35,19 @@ function getPasswordOptions () {
   return passwordOptions
 }
 
+// generate password from options selected
 function generatePassword() {
   let passwordOptions = getPasswordOptions()
 console.log("object",passwordOptions)
   let password = [];
   let possibleCharacters = [];
 
-  if (passwordOptions.hasLowerCase === true) {
+  if (passwordOptions.hasLowerCase) {
     possibleCharacters = possibleCharacters.concat(lowerCaseCharacters)
   }
   console.log("possible characters array ", possibleCharacters)
 
-  if (passwordOptions.hasUpperCase === true) {
+  if (passwordOptions.hasUpperCase) {
     possibleCharacters = possibleCharacters.concat(upperCaseCharacters)
   }
   console.log("possible characters array ", possibleCharacters)
@@ -54,12 +60,17 @@ console.log("object",passwordOptions)
   if (passwordOptions.hasSymbolCharacters) {
     possibleCharacters = possibleCharacters.concat(symbolCharacters)
   }
+    console.log ("password options. password length", passwordOptions.passwordLength)
+    console.log("possible characters array ", possibleCharacters)
+    var length = passwordOptions.passwordLength
 
-  console.log("possible characters array ", possibleCharacters)
-  for (let i = 0; 1 < passwordOptions.length; i++){
-    password.push(Math.floor(Math.random() * possibleCharacters.length))
-  }
-console.log("password", password)
+    console.log ("length", length)
+
+    for(var i = 0; i < length; i++) {
+        var randomnumber = Math.floor(Math.random() * possibleCharacters.length);
+        password[i]= possibleCharacters[randomnumber]
+    }
+    console.log (password )
   return password.join("")
 }
 
