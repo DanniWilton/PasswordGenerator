@@ -1,2 +1,9 @@
-This passwword generator is a work in progress and will need to be submitted.
-I could not get the javascript to work as the prompt function stumped me. I did lots of research and asked lots of questions but could not figure out how to get the information from the prompts to create a password.
+PASSWORD GENERATOR
+The password generator creates a randomised password using prompts. 
+When the 'generate password' button is clicked, prompt functions appear;
+The first prompt asks the user how many characters they would like in the password. The user enters a number between 8-128 and presses "OK" or "cancel" on the prompt.
+A 'confirm' botton alert comes up asking if they would like lowercase characters within their password, the user selects confirm for yes, or cancel for no.
+A 'confirm' botton alert comes up asking if they would like uppercase characters within their password, the user selects confirm for yes, or cancel for no.
+A 'confirm' botton alert comes up asking if they would like numeric characters within their password, the user selects confirm for yes, or cancel for no.
+A 'confirm' botton alert comes up asking if they would like symbols within their password, the user selects confirm for yes, or cancel for no.
+A password is then generated using the required variables that the user selected. The password is seen in the card body section. 
