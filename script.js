@@ -14,15 +14,15 @@ var generateBtn = document.querySelector("#generate");
 
 // Prompt user for password options function
 function getPasswordOptions () {
-  let length = prompt("Select how many characters from 8-128")
+  let length = prompt("Select a number between 8-128, this will be how long your password will be. Select 'OK' to confirm. 'Cancel' will start the prompt again")
 
-  let hasLowerCase = confirm("Would you like lowercase characters?")
+  let hasLowerCase = confirm("Would you like lowercase characters? Select 'OK' for yes, and 'Cancel' for no.")
 
-  let hasUpperCase = confirm("Would you like uppercase characters?")
+  let hasUpperCase = confirm("Would you like uppercase characters? Select 'OK' for yes, and 'Cancel' for no.")
 
-  let hasNumericCharacters = confirm("Would you like Numeric Characters?")
+  let hasNumericCharacters = confirm("Would you like Numeric Characters? Select 'OK' for yes, and 'Cancel' for no.")
 
-  let hasSymbolCharacters = confirm("Would you like Symbols?")
+  let hasSymbolCharacters = confirm("Would you like Symbols? Select 'OK' for yes, and 'Cancel' for no.")
 
   let passwordOptions = {}
 
@@ -65,7 +65,7 @@ console.log("object",passwordOptions)
     var length = passwordOptions.passwordLength
 
     console.log ("length", length)
-
+//for loop used to generate the password.
     for(var i = 0; i < length; i++) {
         var randomnumber = Math.floor(Math.random() * possibleCharacters.length);
         password[i]= possibleCharacters[randomnumber]
